@@ -34,7 +34,7 @@ class UserEventController extends Controller
     }
 
     public function showEventByUser()
-    {
+    {   $events[] = null;
         $company = Company::has('user')->get();
         $index=0;
         foreach($company as $c){
@@ -47,9 +47,15 @@ class UserEventController extends Controller
             $index++;
         }  
 
-        return view('home',[
-            'event' => $events
-        ]);
+        if($events[0] == null){
+            return view('home',[
+                'event' => []
+            ]);
+        } else {
+            return view('home',[
+                'event' => $events
+            ]);
+        }
     }
 
     public function createPage(Request $request)

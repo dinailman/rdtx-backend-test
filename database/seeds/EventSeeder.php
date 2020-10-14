@@ -12,7 +12,7 @@ class EventSeeder extends Seeder
     public function run()
     {
         $events = factory(\App\Events::class, 5)->create([
-            'user_id'  => 2,
+            'user_id'  => 1,
         ]);
     }
 }

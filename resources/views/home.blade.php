@@ -1,5 +1,8 @@
 @extends('layout.master')
 @section('content')
+@if ($event == null)
+    <h3> No User Data yet</h3>
+@else
 <div class="album py-5 bg-light">
     <div class="container">
         @for ($i = 0; $i < count($event); $i++)
@@ -25,4 +28,5 @@
         @endfor
     </div>
 </div>
+@endif
 @endsection
