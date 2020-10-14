@@ -22,3 +22,14 @@ If you discover a security vulnerability within Lumen, please send an e-mail to 
 ## License
 
 The Lumen framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+## Requirement
+
+1. Make sure already installed composer https://getcomposer.org/
+2. Clone the git project
+3. On the terminal prompt make sure already point to apps, run "composer install"
+4. Set environtment first, rename the ".env.example" into ".env" and 
+   change DB_DATABASE, DB_USERNAME and DB_PASSWORD
+5. Migrate table into databse with run this command "php artisan migrate"
+6. Seeding fake data with run this command "php artisan db:seed"
+7. Serve project Using this command "php -S localhost:8000 -t public"
