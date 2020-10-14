@@ -48,6 +48,5 @@
     <nav class="nav d-flex ">
       <a class="p-2 text-muted" href="/">Home</a>
       <a class="p-2 text-muted" href="/user/create">Create User</a>
-      <a class="p-2 text-muted" href="#">Technology</a>
     </nav>
   </div>

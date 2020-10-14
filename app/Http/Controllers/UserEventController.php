@@ -16,7 +16,7 @@ class UserEventController extends Controller
      */
     public function __construct()
     {
-        //
+        
     }
 
     //
@@ -34,24 +34,26 @@ class UserEventController extends Controller
     }
 
     public function showEventByUser()
-    {   $events[] = null;
+    {   
         $company = Company::has('user')->get();
-        $index=0;
-        foreach($company as $c){
-            $user[] = Company::find($c['id'])->User;
-            $events[] = [
-                'user' => $user[$index],
-                'company' => $c,
-                'event' => User::find($user[$index]['id'])->Events
-            ];
-            $index++;
-        }  
 
-        if($events[0] == null){
+        if(count($company) < 1){
+            $events = null;
             return view('home',[
-                'event' => []
+                'event' => $events
             ]);
         } else {
+            $index=0;
+            foreach($company as $c){
+                $user[] = Company::find($c['id'])->User;
+                $events[] = [
+                    'user' => $user[$index],
+                    'company' => $c,
+                    'event' => User::find($user[$index]['id'])->Events
+                ];
+                $index++;
+            }
+
             return view('home',[
                 'event' => $events
             ]);
